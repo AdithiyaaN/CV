@@ -1,69 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particles.js with GIF Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Hi !</title>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z0X71TQ58M"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: url('https://i0.wp.com/wallpaperaccess.com/full/2825710.gif'); /* Replace with your GIF URL */
+            background-size: cover;
+            background-position: center;
+        }
 
-        gtag('config', 'G-Z0X71TQ58M');
-        </script>
-    </head>
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 20%;
+        }
 
-    <body>
-        <table>
-            <tr>
-                <td><img src="adi.png" alt="Logo of Adi"></td>
-                <td><h1></h1></td>
-            </tr>
-        </table>
-        <hr>
-        <p><em>A <strong>Curious teen </strong>who wants to make a place for
-                himself
-                in this world.</em></p>
-        <p>I'm Adi, 18 year old, <em>Computers♡<br></em> Still a noob
-            <em><strong> <a
-                        href="https://www.techopedia.com/definition/4813/programmer">Programmer</a></strong></em>.
-        </p>
-        <hr>
-        <h3>Education</h3>
-        <ul>
-            <li>B.S Computer Science student at <em><a href="https://rvu.edu.in
-                "> RV University </a></em></li><br>
-            <li><a href="https://www.py4e.com
-                    "><strong>Py4e</strong></a><em> (A Python starter course)</em></li>
-        </ul>
-        <hr>
-        <h3>Skills</h3>
-        <table cellspacing="10">
-            <tr>
-                <td>Python</td>
-                <td>☆☆☆</td>
-            </tr>
-            <tr>
-                <td>C</td>
-                <td>☆</td>
-            </tr>
-            <tr>
-                <td>Html</td>
-                <td>☆☆</td>
-            </tr>
-            <tr>
-                <td>CSS</td>
-                <td>☆</td>
-            </tr>
-        </table>
-        <hr>
-        <ul type="Square">
-            <li><p>Wanna know more about me?<br>Check out my <a href="Hobbies.html">Hobbies</a></p></li>
-            <li><p>Are you interested in contacting me? <br>If yes <a href="Contact me.html">Contact-me</a></p></li>
-        </ul>
+        .content h1 {
+            font-size: 5rem; /* Adjust the size as needed */
+            font-weight: bold; /* Makes the text bold */
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
 
+    <!-- Particle container with GIF background -->
+    <div id="particles-js"></div>
 
-    </body>
+    <!-- Content overlay -->
+    <div class="content">
+        <h1>Do you like Games?</h1>
+    </div>
 
+    <!-- Include particles.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Initialize particles.js -->
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80, // Number of particles
+                    "density": {
+                        "enable": true,
+                        "value_area": 800 // Density area
+                    }
+                },
+                "color": {
+                    "value": "#ffffff" // Particle color
+                },
+                "shape": {
+                    "type": "circle", // Shape of the particles
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5, // Particle opacity
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3, // Particle size
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true, // Connect particles with lines
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true, // Enable particle movement
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse" // Repulse particles on hover
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push" // Add particles on click
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
 </html>
